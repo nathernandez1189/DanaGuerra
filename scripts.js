@@ -63,26 +63,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalItems = galleryItems.length;
 
     function updateButtons() {
-        // Ocultar los botones si estamos en los extremos
+        // Ocultar el botón de "prev" si estamos en la primera imagen
         prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
+        // Ocultar el botón de "next" si estamos en la última imagen
         nextButton.style.display = currentIndex === totalItems - 1 ? 'none' : 'block';
     }
 
     function showSlide(index) {
+        // Desplazar el contenedor de la galería para mostrar la imagen correspondiente
         gallery.style.transition = 'transform 0.5s ease-in-out';
         gallery.style.transform = `translateX(-${index * 100}%)`;
-        updateButtons(); // Actualiza la visibilidad de los botones
+        updateButtons(); // Actualizar la visibilidad de los botones
     }
 
     prevButton.addEventListener('click', function() {
-        if (currentIndex > 0) {
+        if (currentIndex > 0) { // Solo si no estamos en la primera imagen
             currentIndex--;
             showSlide(currentIndex);
         }
     });
 
     nextButton.addEventListener('click', function() {
-        if (currentIndex < totalItems - 1) {
+        if (currentIndex < totalItems - 1) { // Solo si no estamos en la última imagen
             currentIndex++;
             showSlide(currentIndex);
         }
@@ -90,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Inicializa la galería mostrando la primera imagen y actualiza los botones
     showSlide(currentIndex);
-    updateButtons();
+    updateButtons(); // Llamamos a la función una vez al principio para configurar la visibilidad inicial
 });
+
 

@@ -159,10 +159,11 @@ nav ul li a:hover {
     background-color: #ffbdd4;
 }
 
+/* Estilos generales de la galería */
 .gallery-container {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 500px; /* Tamaño por defecto en pantallas grandes */
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -178,19 +179,20 @@ nav ul li a:hover {
 }
 
 .gallery-item {
-    min-width: 60%;
-    height: 60%;
-    display:flex;
+    min-width: 100%; /* Una sola imagen a la vez en todas las pantallas */
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .gallery-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cambiado a "cover" para que la imagen siempre llene el contenedor */
+    height: auto; /* Permite que la altura se ajuste manteniendo la proporción */
+    object-fit: contain; /* Las imágenes se ajustan sin recortarse */
 }
 
+/* Flechas de navegación */
 .prev, .next {
     position: absolute;
     top: 50%;
@@ -236,10 +238,49 @@ nav ul li a:hover {
     font-size: 30px;
     font-style: italic; /* Cursiva */
 }
+/* Ajuste para pantallas grandes */
+@media screen and (min-width: 1024px) {
+    .gallery-container {
+        height: 300px; /* Reduce la altura en pantallas grandes */
+    }
 
+    .gallery-item img {
+        width: 20%; /* Mantiene el tamaño original de la imagen */
+        height: 100%; /* Reduce la altura de la imagen al 90% del contenedor */
+        object-fit: contain; /* Ajusta la imagen para que no se recorte */
+    }
+}
 
+/* Media Queries para Pantallas Medianas (Tabletas) */
+@media screen and (max-width: 768px) {
+    .gallery-container {
+        height: 300px; /* Altura más pequeña en pantallas medianas */
+    }
 
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
 
+/* Media Queries para Pantallas Pequeñas (Móviles) */
+@media screen and (max-width: 480px) {
+    .gallery-container {
+        height: 250px; /* Altura aún más pequeña en móviles */
+    }
+
+    .prev, .next {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .gallery-item img {
+        width: 40px;
+        height: 50px;
+        object-fit: cover;
+    }
+}
 footer {
     background-color: #ffbdd4;
     padding: 20px;
