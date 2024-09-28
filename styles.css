@@ -265,7 +265,7 @@ nav ul li a:hover {
 /* Media Queries para Pantallas Medianas (Tabletas) */
 @media screen and (max-width: 768px) {
     .gallery-container {
-        padding-top: 56.25%; /* Mantiene la relación de aspecto en tablets */
+        padding-top: 100%; /* Mantiene la relación de aspecto en tablets */
         max-width: 600px;
     }
 
@@ -279,7 +279,7 @@ nav ul li a:hover {
 /* Media Queries para Pantallas Pequeñas (Móviles) */
 @media screen and (max-width: 480px) {
     .gallery-container {
-        padding-top: 75%; /* Relación de aspecto más alta en móviles */
+        padding-top: 100%; /* Relación de aspecto más alta en móviles */
         max-width: 400px;
     }
 
