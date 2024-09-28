@@ -163,12 +163,16 @@ nav ul li a:hover {
 .gallery-container {
     position: relative;
     width: 100%;
-    height: 500px; /* Tamaño por defecto en pantallas grandes */
+    padding-top: 150%; /* Esto hace que el contenedor sea más alto que ancho */
+    max-width: 600px; /* Tamaño máximo para pantallas grandes */
+    max-height: 900px;
+    margin: 0 auto; /* Centrar horizontalmente */
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #f7f7f7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .gallery {
@@ -176,10 +180,15 @@ nav ul li a:hover {
     transition: transform 0.5s ease;
     width: 100%;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .gallery-item {
-    min-width: 100%; /* Una sola imagen a la vez en todas las pantallas */
+    min-width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -188,8 +197,8 @@ nav ul li a:hover {
 
 .gallery-item img {
     width: 100%;
-    height: auto; /* Permite que la altura se ajuste manteniendo la proporción */
-    object-fit: contain; /* Las imágenes se ajustan sin recortarse */
+    height: auto;
+    object-fit: contain;
 }
 
 /* Flechas de navegación */
@@ -227,13 +236,13 @@ nav ul li a:hover {
 }
 
 .prev:before {
-    content: "❮"; /* Flecha en cursiva */
+    content: "❮";
     font-size: 30px;
     font-style: italic;
 }
 
 .next:before {
-    content: "❯"; /* Flecha en cursiva */
+    content: "❯";
     font-size: 30px;
     font-style: italic;
 }
@@ -241,7 +250,7 @@ nav ul li a:hover {
 /* Media Queries para Pantallas Grandes */
 @media screen and (min-width: 1024px) {
     .gallery-container {
-        height: 500px;
+        padding-top: 50%; /* Mantén la relación de aspecto más alto que ancho */
     }
 
     .gallery-item img {
@@ -254,7 +263,8 @@ nav ul li a:hover {
 /* Media Queries para Pantallas Medianas (Tabletas) */
 @media screen and (max-width: 768px) {
     .gallery-container {
-        height: 400px;
+        padding-top: 150%; /* Mantiene la relación de aspecto en tablets */
+        max-width: 500px;
     }
 
     .gallery-item img {
@@ -267,7 +277,8 @@ nav ul li a:hover {
 /* Media Queries para Pantallas Pequeñas (Móviles) */
 @media screen and (max-width: 480px) {
     .gallery-container {
-        height: 300px;
+        padding-top: 100%; /* Relación de aspecto más alta en móviles */
+        max-width: 400px;
     }
 
     .gallery-item img {
