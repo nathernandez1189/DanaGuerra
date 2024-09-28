@@ -197,25 +197,25 @@ nav ul li a:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #ffbdd4; /* Color rosado */
+    background-color: #ffbdd4;
     color: #fff;
     border: none;
-    border-radius: 50%; /* Botones circulares */
+    border-radius: 50%;
     padding: 15px;
     cursor: pointer;
     z-index: 10;
-    font-size: 25px; /* Tamaño del icono */
-    font-style: italic; /* Estilo en cursiva */
-    font-family: 'Poppins', sans-serif; /* Utiliza la fuente del blog */
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Poppins', sans-serif;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.3s ease;
-    opacity: 80%; /* Agrega transparencia a las flechas */
+    opacity: 80%;
 }
 
 .prev:hover, .next:hover {
     background-color: #ff8ca1;
     transform: translateY(-50%) scale(1.1);
-    opacity: 1; /* Aumenta la opacidad al hacer hover */
+    opacity: 1;
 }
 
 .prev {
@@ -226,61 +226,62 @@ nav ul li a:hover {
     right: 20px;
 }
 
-/* Ajuste de las flechas en cursiva para dar más estilo */
 .prev:before {
     content: "❮"; /* Flecha en cursiva */
     font-size: 30px;
-    font-style: italic; /* Cursiva */
+    font-style: italic;
 }
 
 .next:before {
     content: "❯"; /* Flecha en cursiva */
     font-size: 30px;
-    font-style: italic; /* Cursiva */
+    font-style: italic;
 }
+
 /* Media Queries para Pantallas Grandes */
 @media screen and (min-width: 1024px) {
     .gallery-container {
-        height: 500px; /* Mantén la altura para pantallas grandes */
+        height: 500px;
     }
 
     .gallery-item img {
-        width: auto; /* Deja que la imagen ocupe su tamaño natural */
-        height: 100%; /* La altura de la imagen será el 100% del contenedor */
-        object-fit: cover; /* Cubre el contenedor, puede recortar un poco */
+        width: auto; 
+        height: 100%;
+        object-fit: cover;
     }
 }
 
 /* Media Queries para Pantallas Medianas (Tabletas) */
 @media screen and (max-width: 768px) {
     .gallery-container {
-        height: 400px; /* Reduce la altura de la galería en pantallas más pequeñas */
+        height: 400px;
     }
 
     .gallery-item img {
-        width: 100%; /* La imagen ocupará todo el ancho disponible */
-        height: auto; /* Mantiene la proporción */
-        object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor sin recortarse */
+        width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 }
 
 /* Media Queries para Pantallas Pequeñas (Móviles) */
 @media screen and (max-width: 480px) {
     .gallery-container {
-        height: 300px; /* Aún más pequeña en móviles */
+        height: 300px;
     }
 
     .gallery-item img {
         width: 100%;
-        height: auto; /* Asegura que las imágenes no se estiren verticalmente */
-        object-fit: contain; /* Las imágenes se ajustan al contenedor sin recortes */
+        height: auto;
+        object-fit: contain;
     }
 
     .prev, .next {
-        padding: 10px; /* Ajusta el tamaño de los botones de navegación */
-        font-size: 20px; /* Reduce el tamaño del icono */
+        padding: 10px;
+        font-size: 20px;
     }
 }
+
 footer {
     background-color: #ffbdd4;
     padding: 20px;
